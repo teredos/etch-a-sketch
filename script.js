@@ -2,12 +2,6 @@ const gridContainer = document.getElementById("grid-container");
 gridContainer.style.gridTemplateColumns = "repeat(16, auto)";
 createGridItems(16);
 
-const resetBtn = document.createElement("button");
-resetBtn.setAttribute("id", "reset-button");
-resetBtn.innerText = "Clear";
-resetBtn.addEventListener("click", clearGrid);
-document.getElementById("options").appendChild(resetBtn);
-
 const gridDimensionsBtn = document.createElement("button");
 gridDimensionsBtn.setAttribute("id", "dimensions-button");
 gridDimensionsBtn.textContent = "Size";
@@ -40,12 +34,25 @@ setColorBtn.addEventListener("click", function() {
 
 });
 
+const resetBtn = document.createElement("button");
+resetBtn.setAttribute("id", "reset-button");
+resetBtn.innerText = "Clear";
+resetBtn.addEventListener("click", clearGrid);
+document.getElementById("options").appendChild(resetBtn);
+
 const eraserBtn = document.createElement("button");
 eraserBtn.setAttribute("id", "eraser-button");
 eraserBtn.textContent = "Eraser";
 document.getElementById("options").appendChild(eraserBtn);
 eraserBtn.addEventListener("click", function() {
-
+    currentColor.textContent = "Colour: None (Eraser)";
+    let gridItems = document.querySelectorAll(".grid-item");
+    gridItems.forEach(eraseFunction);
+    function eraseFunction(gridItem) {
+        gridItem.addEventListener("mouseover", function() {
+            gridItem.style.backgroundColor = "white";
+        });
+    }
 });
 
 const currentOptions = document.querySelector("#current-options");
