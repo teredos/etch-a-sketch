@@ -1,0 +1,68 @@
+html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'FuntypeRegular';
+    font-weight: normal;
+    font-style: normal;
+}
+#reset-button {
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    font-size: 1.2em;
+    background-color: white;
+}
+#reset-button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+#dimensions-button {
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    background-color: white;
+    font-size: 1.2em;
+}
+#dimensions-button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+#color-button {
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    background-color: white;
+    font-size: 1.2em;
+}
+#color-button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+#eraser-button {
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    background-color: white;
+    font-size: 1.2em;
+}
+#eraser-button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+#grid-container {
+    display: grid;
+    width: 512px;
+    height: 512px;
+    border: 3px solid black;
+    border-radius: 3px;
+}
+@media screen and (max-width: 600px) {
+    #grid-container {
+        max-width: 400px;
+        max-height: 400px;
+    }
+}
+@media screen and (max-width: 300px) {
+    #grid-container {
+        max-width: 200px;
+        max-height: 200px;
+    }
+}
