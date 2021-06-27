@@ -2,8 +2,9 @@ const gridContainer = document.getElementById("grid-container");
 gridContainer.style.gridTemplateColumns = "repeat(16, auto)";
 createGridItems(16);
 
+
 const gridDimensionsBtn = document.createElement("button");
-gridDimensionsBtn.setAttribute("id", "dimensions-button");
+gridDimensionsBtn.setAttribute("class", "options-button");
 gridDimensionsBtn.textContent = "Size";
 gridDimensionsBtn.addEventListener("click", function() {
     let dimsInput = prompt("Choose a number between 1 and 128 to set as the height and width of the grid.");
@@ -22,43 +23,23 @@ gridDimensionsBtn.addEventListener("click", function() {
     } else {
         alert("Please only enter numbers between 1 and 128.");
     }
-    
+    currentColor.textContent = "Colour: Random";
 });
 document.getElementById("options").appendChild(gridDimensionsBtn);
 
-const setColorBtn = document.createElement("button");
-setColorBtn.setAttribute("id", "color-button");
-setColorBtn.textContent = "Colour";
-document.getElementById("options").appendChild(setColorBtn);
-setColorBtn.addEventListener("click", function() {
-
-});
 
 const resetBtn = document.createElement("button");
-resetBtn.setAttribute("id", "reset-button");
+resetBtn.setAttribute("class", "options-button");
 resetBtn.innerText = "Clear";
 resetBtn.addEventListener("click", clearGrid);
 document.getElementById("options").appendChild(resetBtn);
 
-const eraserBtn = document.createElement("button");
-eraserBtn.setAttribute("id", "eraser-button");
-eraserBtn.textContent = "Eraser";
-document.getElementById("options").appendChild(eraserBtn);
-eraserBtn.addEventListener("click", function() {
-    currentColor.textContent = "Colour: None (Eraser)";
-    let gridItems = document.querySelectorAll(".grid-item");
-    gridItems.forEach(eraseFunction);
-    function eraseFunction(gridItem) {
-        gridItem.addEventListener("mouseover", function() {
-            gridItem.style.backgroundColor = "white";
-        });
-    }
-});
 
 const currentOptions = document.querySelector("#current-options");
 currentOptions.style.fontFamily = "Arial";
 currentOptions.style.fontSize = "25px";
 currentOptions.style.marginTop = "25px";
+
 
 const currentGridSize = document.createElement("div");
 currentGridSize.style.fontSize = "0.8em";
@@ -68,12 +49,14 @@ currentGridSize.setAttribute("class", "current-option");
 currentGridSize.textContent = "Grid Size: 16 x 16";
 currentOptions.appendChild(currentGridSize);
 
+
 const currentColor = document.createElement("div");
 currentColor.style.fontSize = "0.8em";
 currentColor.setAttribute("id", "current-color");
 currentColor.setAttribute("class", "current-option");
 currentColor.textContent = "Colour: Random";
 currentOptions.appendChild(currentColor);
+
 
 function clearGrid() {
     let gridItems = document.querySelectorAll(".grid-item");
@@ -85,7 +68,9 @@ function clearGrid() {
     gridContainer.innerHTML = "";
     gridContainer.style.gridTemplateColumns = `repeat(${Math.sqrt(gridItems.length)}, auto)`;
     createGridItems(Math.sqrt(gridItems.length));
+    currentColor.textContent = "Colour: Random";
 }
+
 
 function createGridItems(input) {
     for (i = 1; i <= (input * input); i++) {

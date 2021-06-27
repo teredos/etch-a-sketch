@@ -7,43 +7,13 @@ html {
     font-weight: normal;
     font-style: normal;
 }
-#reset-button {
+.options-button {
     font-family: Arial, Helvetica, sans-serif;
     border: none;
     font-size: 1.2em;
     background-color: white;
 }
-#reset-button:hover {
-    cursor: pointer;
-    text-decoration: underline;
-}
-#dimensions-button {
-    font-family: Arial, Helvetica, sans-serif;
-    border: none;
-    background-color: white;
-    font-size: 1.2em;
-}
-#dimensions-button:hover {
-    cursor: pointer;
-    text-decoration: underline;
-}
-#color-button {
-    font-family: Arial, Helvetica, sans-serif;
-    border: none;
-    background-color: white;
-    font-size: 1.2em;
-}
-#color-button:hover {
-    cursor: pointer;
-    text-decoration: underline;
-}
-#eraser-button {
-    font-family: Arial, Helvetica, sans-serif;
-    border: none;
-    background-color: white;
-    font-size: 1.2em;
-}
-#eraser-button:hover {
+.options-button:hover {
     cursor: pointer;
     text-decoration: underline;
 }
